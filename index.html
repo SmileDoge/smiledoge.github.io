@@ -3,7 +3,7 @@
         <title>Smile Portfolio</title>
         <link rel="stylesheet" type="text/css" href="style.css">
         <script src="https://kit.fontawesome.com/73089f8a3f.js" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/12.0.6/markdown-it.min.js" integrity="sha512-7U8vY7c6UQpBNQOnBg3xKX502NAckvk70H1nWvh6W7izA489jEz+RCN3ntT1VMdXewaSKkOrEBegp/h6SPXrjw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js"></script>
     
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     </head>
@@ -13,9 +13,9 @@
             <div class="info center column-dir">
                 <h1>Smile</h1>
                 <div class="icons">
-                    <a target="_blank" href="https://github.com/SmileDoge"                         ><i class="fab fa-github"></i></a>
-                    <a target="_blank" href="https://steamcommunity.com/profiles/76561198233014472"><i class="fab fa-steam"></i></a>
-                    <a target="_blank" href=""><i class="fab fa-youtube"></i></a>
+                    <a target="_blank" href="https://github.com/SmileDoge"                            ><i class="fab fa-github"></i></a>
+                    <a target="_blank" href="https://steamcommunity.com/profiles/76561198233014472"   ><i class="fab fa-steam"></i></a>
+                    <a target="_blank" href="https://www.youtube.com/channel/UCw_Z2brGuuhGKZ9oc9KREog"><i class="fab fa-youtube"></i></a>
                 </div>
                 <div class="center" style="margin-top: 15;">
                     <i class="fab fa-discord" style="margin-right: 10;"></i>Smile.js#1337
@@ -24,20 +24,21 @@
         </div>
 
         <div class="content">
-            <h1>1</p>
+            <img src="https://cdn.discordapp.com/emojis/755911701068775444.gif?v=1">
         </div>
 
-        <div class="footer center" style="padding-top: 68px; padding-bottom: 38px;">
-            Wow this is footer
+        <div class="footer center" style="padding-top: 16px; padding-bottom: 18px;">
+            <img src="https://cdn.discordapp.com/emojis/755911701068775444.gif?v=1">
         </div>
 
         <script>
-            var markdown = window.markdownit()
-
+            var markdown = new showdown.Converter()
+            
             $.get("/content.md", function(data){
-                let result = markdown.render(data)
+                let result = markdown.makeHtml(data)
                 $(".content").html(result)
             })
+            
         </script>
     </body>
 </html>

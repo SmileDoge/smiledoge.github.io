@@ -4,14 +4,13 @@
     --background-color: #22223B;
     --content-color: #4A4E69;
     --hyperlink-color: #C9ADA7;
-    --hyperlink-visited-color: #C9ADA7;
 }
+
 
 /*
 Old colors
 rgb(46, 44, 61)
 rgb(67, 63, 94)
-
 */
 
 body {
@@ -41,11 +40,17 @@ body::-webkit-scrollbar-thumb {
 }
 
 .content {
-    max-width: 44%;
     margin: auto;
+    max-width: 49%;
     padding: 18;
     background-color: var(--content-color);
     border-radius: 24px;
+}
+
+@media (orientation: portrait){
+    .content {
+        max-width: 64%;
+    }
 }
 
 .link {
@@ -63,15 +68,15 @@ body::-webkit-scrollbar-thumb {
 
 a, p {
     text-decoration: none;
+    font-size: 17;
 }
 
 a {
     color: var(--hyperlink-color);
-    font-size: 17;
 }
 
 a:visited {
-    color: var(--hyperlink-visited-color);
+    color: var(--hyperlink-color);
 }
 
 p {
